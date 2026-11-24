@@ -1,4 +1,4 @@
 interface:
-  display_name: "Edge 文献检索与下载"
-  short_description: "在 Edge 中按主题或 DOI 检索论文，使用现有机构访问权限下载全文，核验 PDF 后保存到指定目录。"
-  default_prompt: "用 $edge-literature-download 在 Edge 中检索论文，将全文 PDF 保存到指定目录并核对论文身份。"
+  display_name: "Chrome / Edge 文献检索与下载"
+  short_description: "在 Chrome 或 Edge 中检索论文，使用现有机构访问权限下载并核验全文 PDF。"
+  default_prompt: "用 $edge-literature-download 在 Chrome 中检索论文，将全文 PDF 保存到指定目录并核对论文身份。"
