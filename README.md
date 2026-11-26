@@ -7,7 +7,7 @@
 需要能连接 Google Chrome 的 Codex，以及 Node.js/npm。PDF 核验需要 Python 3.10 或更高版本和 [`requirements.txt`](requirements.txt) 中的依赖。
 
 ```sh
-npx --yes skills add https://github.com/xyj0727/edge-literature-download -g -a codex -y --copy
+npx --yes skills add https://github.com/xyj0727/chrome-literature-download -g -a codex -y --copy
 ```
 
 重启 Codex 后，调用 `$chrome-literature-download`。如需为 PDF 核验准备独立环境，可在仓库目录运行下列 PowerShell 命令，并让 Codex 使用该环境中的 Python。
