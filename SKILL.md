@@ -1,25 +1,25 @@
 ---
-name: edge-literature-download
-description: Search for academic papers in Google Chrome or Microsoft Edge, download full-text PDFs using the connected browser profile, and verify each saved paper. Use for a research topic, title, DOI, article link, or paper list, including authorized publisher and institutional access.
+name: chrome-literature-download
+description: Search for academic papers in Google Chrome, download full-text PDFs using the connected Chrome profile, and verify each saved paper. Use for a research topic, title, DOI, article link, or paper list, including authorized publisher and institutional access.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
-# Chrome / Edge 文献检索与下载
+# Chrome 文献检索与下载
 
-用 Codex 已连接的 Google Chrome 或 Microsoft Edge 检索论文、打开出版社或资料库页面并保存全文 PDF。先下载到用户指定目录，再以本地 PDF 为依据阅读和总结。已绑定项目且用户未指定目录时，保存到项目下的文献子目录。先确认目标路径是本机绝对路径。
+用 Codex 已连接的 Google Chrome 检索论文、打开出版社或资料库页面并保存全文 PDF。先下载到用户指定目录，再以本地 PDF 为依据阅读和总结。已绑定项目且用户未指定目录时，保存到项目下的文献子目录。先确认目标路径是本机绝对路径。
 
-## 选择浏览器
+## 连接 Chrome
 
-- 使用 `mcp__cua_repl`，以工具当前返回的文档为准。用户指定标签页时，绑定该标签页；用户指定浏览器时，用对应的 `"chrome"` 或 `"edge"` 创建新标签页。
-- 用户未指定时，优先复用能访问目标资源的已连接配置文件。同等条件下沿用 Edge 作为默认浏览器。只有 Chrome 已连接时直接用 Chrome。使用连接的配置文件，不跨浏览器迁移登录状态。
-- 首次创建标签页时传入简短的会话名，例如 `cua.createBrowserTab("chrome", url, { sessionName: "🔎 文献检索" })`；Edge 使用相同调用并将首个参数改为 `"edge"`。已经绑定用户标签页时沿用当前连接。
-- 所需浏览器未接入或登录态在另一个配置文件时，请用户连接正确的浏览器配置文件。当前连接能打开页面但受浏览器弹窗或其他扩展阻挡时，按工具文档发起手动接管，请用户处理弹窗并交回控制，再从原页面继续。
+- 使用 `mcp__cua_repl`，以工具当前返回的文档为准。用户指定标签页时，绑定该标签页；未指定标签页时，使用 `"chrome"` 创建新标签页。
+- 优先复用能访问目标资源的已连接 Google Chrome 配置文件，不跨浏览器迁移登录状态。
+- 首次创建标签页时传入简短的会话名，例如 `cua.createBrowserTab("chrome", url, { sessionName: "🔎 文献检索" })`。已经绑定用户标签页时沿用当前连接。
+- Google Chrome 未接入或登录态在另一个配置文件时，请用户连接正确的 Chrome 配置文件。当前连接能打开页面但受浏览器弹窗或其他扩展阻挡时，按工具文档发起手动接管，请用户处理弹窗并交回控制，再从原页面继续。
 
 ## 定位论文
 
 1. 有 DOI 或稳定文章 URL 时直接打开。仅有题名时先查精确题名。按主题检索时，依据用户给定的主题、年份、文献类型和数量拟定检索式，打开学术索引、数据库或出版社搜索页面，记录实际使用的检索式及纳入条件。根据题名、作者、年份和 DOI 去重，区分预印本与正式发表版。
-2. 在来源页核对题名、DOI（如有）和版本。沿可见链接使用当前浏览器配置文件获准的出版社或机构登录态。需要 WebVPN 时从已知的机构入口进入并遵循实际导航。按浏览器安全规则处理登录、验证码、权限或访问限制。允许时可另查出版社开放获取版或可信仓储版本，并注明版本和来源。
+2. 在来源页核对题名、DOI（如有）和版本。沿可见链接使用当前 Chrome 配置文件获准的出版社或机构登录态。需要 WebVPN 时从已知的机构入口进入并遵循实际导航。按浏览器安全规则处理登录、验证码、权限或访问限制。允许时可另查出版社开放获取版或可信仓储版本，并注明版本和来源。
 
 ## 下载并保存
 
